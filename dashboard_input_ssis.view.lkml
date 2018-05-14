@@ -238,4 +238,19 @@ view: dashboard_input_ssis {
     type: count
     drill_fields: [series_name, db_name, seller_name]
   }
+
+measure: total_lp_usd{
+  type: sum
+  sql: ${lp_usd} ;;
+  value_format: "0.000,,\" M\""
+  drill_fields: [seller_name, db_name]
 }
+
+  measure: total_sp_usd{
+    type: sum
+    sql: ${sp_usd} ;;
+    value_format: "0.000,,\" M\""
+    drill_fields: [seller_name, db_name]
+  }
+
+  }

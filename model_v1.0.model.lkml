@@ -14,7 +14,12 @@ datagroup: model_v1_0_default_datagroup {
 persist_with: model_v1_0_default_datagroup
 
 
-explore: dashboard_input_ssis {}
+explore: dashboard_input_ssis {
+  join:seller_id {
+    sql_on: ${dashboard_input_ssis.seller_id} = ${seller_id.seller_id} ;;
+    relationship: many_to_one
+  }
+}
 
 explore: product_id {}
 
