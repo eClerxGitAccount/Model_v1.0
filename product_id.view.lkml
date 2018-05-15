@@ -55,4 +55,10 @@ view: product_id {
     type: count
     drill_fields: [product_name, db_name, series_name]
   }
+
+    measure: series_count {
+    type: count_distinct
+    sql: ${series_name} ;;
+    drill_fields: [series_name]
+  }
 }

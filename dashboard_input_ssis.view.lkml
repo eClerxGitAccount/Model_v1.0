@@ -249,8 +249,9 @@ measure: total_lp_usd{
   measure: total_sp_usd{
     type: sum
     sql: ${sp_usd} ;;
-    value_format: "0.000,,\" M\""
+    value_format: "0.00,,\" M\""
     drill_fields: [seller_name, db_name]
   }
+
 
   }
