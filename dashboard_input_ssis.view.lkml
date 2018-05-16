@@ -252,6 +252,10 @@ measure: total_lp_usd{
     value_format: "0.00,,\" M\""
     drill_fields: [seller_name, db_name]
   }
-
+measure: product_count {
+  type:  count_distinct
+  sql: ${db_name} ;;
+  drill_fields: [seller_name,db_name]
+}
 
   }

@@ -20,11 +20,7 @@ explore: dashboard_input_ssis {
     relationship: many_to_one
   }
 
-  join:product_id {
-    sql_on: ${dashboard_input_ssis.db_name} = ${product_id.db_name} ;;
-    relationship: many_to_many
   }
-}
 
 explore: product_id {}
 
