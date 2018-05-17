@@ -255,7 +255,7 @@ measure: total_lp_usd{
 measure: product_count {
   type:  count_distinct
   sql: ${db_name} ;;
-  drill_fields: [seller_name,db_name]
+  drill_fields: [seller_name,db_name,product_count]
 }
 
   }

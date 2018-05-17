@@ -22,7 +22,10 @@ view: mp_ppclassification {
   }
 
   measure: count {
-    type: count
-    drill_fields: [seller_name]
+    type: count_distinct
+    sql: ${seller_id} ;;
+    drill_fields: [seller_name, site]
   }
+
+
 }
