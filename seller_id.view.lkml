@@ -29,5 +29,13 @@ view: seller_id {
   measure: count {
     type: count
     drill_fields: [seller_name]
+    link: {
+  label: "Product Dashboard"
+  url: "/dashboards/5"
+  icon_url: "http://www.looker.com/favicon.ico"
+}
+
+
+
   }
 }

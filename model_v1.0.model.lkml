@@ -19,7 +19,10 @@ explore: dashboard_input_ssis {
     sql_on: ${dashboard_input_ssis.seller_id} = ${seller_id.seller_id} ;;
     relationship: many_to_one
   }
-
+  join:mp_ppclassification {
+    sql_on: ${dashboard_input_ssis.seller_id} = ${seller_id.seller_id} ;;
+    relationship: many_to_many
+  }
   }
 
 explore: product_id {}
