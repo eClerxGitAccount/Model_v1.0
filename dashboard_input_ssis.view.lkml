@@ -266,7 +266,7 @@ measure: product_count {
 
   measure: LP_SP_Variation {
     type:  sum
-    sql: ${sp_usd} - ${lp_usd};;
+    sql:  ${lp_usd} - ${sp_usd};;
     drill_fields: [seller_id, seller_name, LP_SP_Variation]
   }
 
