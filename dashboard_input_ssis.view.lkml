@@ -239,24 +239,24 @@ view: dashboard_input_ssis {
     drill_fields: [series_name, db_name, seller_name]
   }
 
-measure: total_lp_usd{
-  type: sum
-  sql: ${lp_usd} ;;
-  value_format: "0.000,,\" M\""
-  drill_fields: [seller_name, db_name]
-}
+  measure: total_lp_usd{
+    type: sum
+    sql: ${lp_usd} ;;
+    value_format: "0.000,,\" M\""
+    drill_fields: [seller_name, total_lp_usd, total_sp_usd, variation]
+  }
 
   measure: total_sp_usd{
     type: sum
     sql: ${sp_usd} ;;
     value_format: "0.00,,\" M\""
-    drill_fields: [seller_name, db_name]
+    drill_fields: [seller_name, total_lp_usd, total_sp_usd, variation]
   }
-measure: product_count {
-  type:  count_distinct
-  sql: ${db_name} ;;
-  drill_fields: [seller_name,product_count]
-}
+  measure: product_count {
+    type:  count_distinct
+    sql: ${db_name} ;;
+    drill_fields: [seller_name,product_count]
+  }
 
   measure: seller_count {
     type:  count_distinct
@@ -264,10 +264,10 @@ measure: product_count {
     drill_fields: [seller_id, seller_name]
   }
 
-  measure: LP_SP_Variation {
+  measure: variation {
     type:  sum
-    sql:  ${lp_usd} - ${sp_usd};;
-    drill_fields: [seller_id, seller_name, LP_SP_Variation]
+    sql: ${lp_usd} - ${sp_usd};;
+
   }
 
   }
