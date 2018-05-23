@@ -255,9 +255,19 @@ measure: total_lp_usd{
 measure: product_count {
   type:  count_distinct
   sql: ${db_name} ;;
-  drill_fields: [seller_name,db_name,product_count]
+  drill_fields: [seller_name,product_count]
 }
 
+  measure: seller_count {
+    type:  count_distinct
+    sql: ${seller_id} ;;
+    drill_fields: [seller_id, seller_name]
+  }
 
+  measure: LP_SP_Variation {
+    type:  sum
+    sql: ${sp_usd} - ${lp_usd};;
+    drill_fields: [seller_id, seller_name, LP_SP_Variation]
+  }
 
   }
