@@ -270,4 +270,10 @@ view: dashboard_input_ssis {
 
   }
 
+  measure: Unique_site {
+    type: count_distinct
+    drill_fields: [site]
+  }
+
+
   }
