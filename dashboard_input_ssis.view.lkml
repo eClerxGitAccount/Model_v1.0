@@ -272,6 +272,7 @@ view: dashboard_input_ssis {
 
   measure: Unique_site {
     type: count_distinct
+    sql: ${site} ;;
     drill_fields: [site]
   }
 
